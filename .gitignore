@@ -416,3 +416,7 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Visual Studio workspace files
+/sudoku_solver.vcxproj
+/sudoku_solver.vcxproj.filters
