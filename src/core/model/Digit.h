@@ -1,5 +1,6 @@
 #pragma once
 
+#include <unordered_set>
 
 namespace sudoku_solver {
 
@@ -12,11 +13,15 @@ struct Digit
     int value;
 
     explicit Digit(int aInt)
-        : symbol(aInt), value(aInt) {
+        : symbol(aInt)
+        , value(aInt)
+    {
     }
 
     explicit Digit(int aSymbol, int aValue)
-        : symbol(aSymbol), value(aValue) {
+        : symbol(aSymbol)
+        , value(aValue)
+    {
     }
 
     // Two digits are equal if both their symbol and value match.
@@ -25,6 +30,8 @@ struct Digit
         return symbol == aOther.symbol && value == aOther.value;
     }
 };
+
+using Digits = std::unordered_set<const Digit*>;
 
 }
 

@@ -1,6 +1,4 @@
 #pragma once
-
-#include <memory>
 #include <vector>
 
 #include "core/model/Cell.h"
@@ -15,11 +13,11 @@ class Game
 {
 public:
     // Constructs a fully initialized Game from the given cells and regions.
-    // All objects must be fully constructed and valid before being passed in.
-    explicit Game(std::unique_ptr<Cell[]> aCells, std::vector<Region> aRegions);
+    // Models are expected to be fully constructed and valid before being passed in.
+    explicit Game(std::vector<Cell> aCells, std::vector<Region> aRegions);
 
 private:
-    std::unique_ptr<Cell[]> mCells;
+    std::vector<Cell> mCells;
     std::vector<Region> mRegions;
 };
 

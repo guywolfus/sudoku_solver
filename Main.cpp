@@ -1,4 +1,4 @@
-#include <array>
+#include <vector>
 #include <iostream>
 
 #include "core/model/Cell.h"
@@ -11,7 +11,8 @@ int main()
     std::cout << std::boolalpha;
 
     // Create a flat array of cells, as Game would at runtime
-    std::array<Cell, 6> cells;
+    std::vector<Cell> cells;
+    cells.reserve(6);
 
     // Assign digits to some cells
     cells[0].setDigit(Digit(9));
